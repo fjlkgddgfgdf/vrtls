@@ -9,7 +9,10 @@ const nextConfig = {
          }
       ]
    },
-   output: 'export' // This is needed for static site generation on Netlify
+   output: 'export', // This is needed for static site generation on Netlify
+   trailingSlash: true // This helps with static exports
+   // Add basePath if your site is not deployed to the root domain
+   // basePath: '',
 };
 
 module.exports = nextConfig;

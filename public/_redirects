@@ -1,0 +1,5 @@
+# Handle dynamic chat routes
+/chat/:character /chat/:character/index.html 200
+
+# Handle all other routes
+/* /index.html 200 
