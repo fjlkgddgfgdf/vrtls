@@ -7,5 +7,12 @@
 
 [[redirects]]
   from = "/chat/*"
-  to = "/chat/[character]/index.html"
+  to = "/chat/:character/index.html"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true
