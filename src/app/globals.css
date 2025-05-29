@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --background-start-rgb: 255, 255, 255;
+    --background-end-rgb: 240, 240, 240;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 0 0% 100%;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(to bottom, 
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+  }
+
+  .gradient-card {
+    @apply dark:bg-gradient-to-br dark:from-white/10 dark:to-white/5
+           bg-gradient-to-br from-black/10 to-black/5;
+    backdrop-filter: blur(10px);
+    @apply dark:border-white/10 border-black/10;
+    border-width: 1px;
+  }
+
+  .gradient-button {
+    background: linear-gradient(to right, #ec4899, #8b5cf6);
+  }
+
+  .animate-borderGlow {
+    animation: borderGlow 2s ease-in-out infinite;
+  }
+
+  .animate-gradientShift {
+    animation: gradientShift 15s ease-in-out infinite;
+  }
+
+  .drop-shadow-glow {
+    @apply dark:drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]
+           drop-shadow-[0_0_8px_rgba(236,72,153,0.5)];
+  }
+
+  .bg-coin {
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    border-radius: 50%;
+  }
+
+  @keyframes borderGlow {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(236, 72, 153, 0.5),
+                 0 0 10px rgba(139, 92, 246, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(236, 72, 153, 0.8),
+                 0 0 20px rgba(139, 92, 246, 0.6);
+    }
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+}
+
+.text-shadow {
+  @apply dark:text-shadow-dark text-shadow-light;
+}
+
+.text-shadow-lg {
+  @apply dark:text-shadow-dark-lg text-shadow-light-lg;
+}
+
+@layer utilities {
+  .text-shadow-light {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  .text-shadow-light-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  .text-shadow-dark {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .text-shadow-dark-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
+  }
+} 
