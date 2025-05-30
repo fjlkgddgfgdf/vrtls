@@ -1,9 +1,9 @@
 import OpenAI from 'openai';
-import { OPENAI_CONFIG } from '../config/openai';
+import { OPENAI_API_KEY, OPENAI_CONFIG } from '../config/openai';
 import { ChatCompletionMessageParam } from 'openai/resources/chat/completions';
 
 const openai = new OpenAI({
-  apiKey: OPENAI_CONFIG.apiKey,
+  apiKey: OPENAI_API_KEY,
   dangerouslyAllowBrowser: true
 });
 
