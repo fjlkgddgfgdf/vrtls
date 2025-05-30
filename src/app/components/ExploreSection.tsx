@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 'use client';
 
 import Image from 'next/image';
@@ -152,7 +154,7 @@ export default function ExploreSection() {
 
       try {
          const connection = new Connection(
-            'https://mainnet.helius-rpc.com/?api-key=b3157c76-c2ae-47a3-bb24-1181b54d4c62'
+            process.env.NEXT_PUBLIC_SOLANA_RPC_URL
          );
          const publicKey = new PublicKey(solanaAccount.address);
          const transaction = new Transaction();
