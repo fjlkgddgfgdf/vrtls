@@ -4,3 +4,10 @@
 
 [build.environment]
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
+[[redirects]]
+  from = "/chat/*"
+  to = "/chat/:character/index.html"
+  status = 200
+  force = true
+
